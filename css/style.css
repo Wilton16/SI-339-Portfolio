@@ -1,0 +1,285 @@
+header{
+	background: url("images\1200px-Detroit_Tigers_logo.svg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 3em;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+h1{
+	background-color: orange;
+	color: navy;
+}
+
+.navlink{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.navitem a{
+	color: navy;
+	text-decoration: none;
+	opacity: 1;
+}
+
+body{
+	background-color: orange;
+	font-family: Georgia, serif;
+	font-size: 12px;
+	color: navy;
+}
+
+p{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+h1{
+	font-size: 4em;
+	text-align: center;
+}
+
+h2{
+	font-size: 2em;
+	text-align: center;
+}
+
+a.skip{
+	text-decoration: none;
+	position: absolute;
+	background-color: white;
+	color: navy;
+	position: absolute;
+	transform: translateY(-100%);
+}
+a.skip:focus{
+	transform: translateY(0%);
+}
+img{
+	display: block;
+	margin: 0 auto;
+}
+
+.allstars{
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+}
+
+.allstars img:hover{
+	-webkit-transform: scaleX(-1);
+  	transform: scaleX(-1);
+}
+
+.futureallstars{
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+}
+
+.futureallstars img:hover{
+	position:relative;
+    top:-25px;
+    left:-35px;
+    width:auto;
+    height:125%;
+    display:block;
+    z-index:999;
+}
+.form{
+	text-align: center;
+}
+
+.flipcard{
+	background-color: transparent;
+	width: 400px;
+	height: 400px;
+	border: 1px solid orange;
+	perspective: 1000px;
+	margin: auto;
+	display: block;
+}
+
+.inner{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flipcard:hover .inner {
+	transform: rotateY(-180deg);
+}
+
+.front, .back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.front{ /*if I go back to just using the text instead of the pic*/
+	background-color: navy;
+	color: white; 
+}
+
+.back{
+	background-color: navy;
+	color: white;
+	transform: rotateY(180deg);
+}
+
+@keyframes shake{
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	25% { transform: translate(-1px, -2px) rotate(-2deg); }
+	50% { transform: translate(-3px, 0px) rotate(2deg); }
+	75% { transform: translate(3px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -1px) rotate(2deg); }
+}
+
+.allstars a{
+	color: navy;
+}
+
+.current a{
+	text-decoration: underline;
+	font-weight: 1000;
+	color: black;
+}
+
+.navitem a:hover{
+	opacity: .5;
+}
+
+.container{
+	display: grid;
+	grid-template-areas: "item1"
+						 "item2"
+						 "item3"
+						 "item4";
+	text-align: center;
+}
+.parallax {
+	background-image: url("images\1200px-Detroit_Tigers_logo.svg.png");
+	min-height: 300px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+  
+.item1{
+	grid-area: item1;
+}
+
+.item2{
+	grid-area: item2;
+}
+
+.item3{
+	grid-area: item3;
+}
+
+.item4{
+	grid-area: item4;
+}
+/*Twitter Starts ~~~
+<style type="text/css">< #twitter {  
+  width: 310px;  
+  border: 2px solid #CCC;  
+  font-family: Tahoma;  
+  font-size: 13px;  
+  height: 300px;  
+  overflow: auto;  
+  margin: 10px 0px;  
+}  
+ 
+#twitter ul {  
+  list-style: none;  
+  margin: 0;  
+  padding: 0;  
+}  
+ 
+#twitter ul li {  
+  border-bottom: 1px dotted #CCC;  
+  padding: 10px 5px;  
+  margin: 0px;  
+  line-height: 22px;  
+}  
+ 
+#twitter ul li a {  
+  font: normal 14px Tahoma;  
+  color: #004080;  
+}  
+ 
+#twitter ul li a:hover {  
+  color: #CC0000;  
+}  
+
+~~~Twitter Ends RETURN TO FIGURE OUT HOW TO IMPLEMENT*/
+
+@media screen and (min-width: 700px){
+	.allstars{
+		grid-template-columns: 1fr 1fr;
+	}
+	body{
+		font-size: 1.25em;
+	}
+	.container{
+		grid-template-areas: "item1 item1"
+							 "item2 item3"
+							 "item4 item4";
+	}
+	.navlink{
+		flex-direction: column;
+	}
+	body{
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 1080px){
+	.allstars{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	body{
+		font-size: 1.5em;
+	}
+	.container{
+		grid-template-areas: "item1"
+							 "item2"
+						     "item3"
+							 "item4";
+	}
+	.navlink{
+		flex-direction: row;
+	}
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+	.allstars img:hover{
+		animation: none;
+	}
+	.futureallstars img:hover{
+		height:100%
+	}
+	.inner{
+		transition: none;
+	}
+	.flipcard:hover .inner{
+		transform: none;
+	}
+}
+@media only screen and (max-device-width: 1366px) {
+	.parallax {
+	  background-attachment: scroll;
+	}
+  }
